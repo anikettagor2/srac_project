@@ -65,7 +65,7 @@ export default function LoginPage() {
                   </div>
                   <div className="relative">
                     <Lock className="absolute left-6 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-600" />
-                    <input type="password" underline className="w-full bg-white/[0.03] border border-white/10 rounded-2xl pl-14 pr-6 py-4 focus:outline-none focus:border-primary transition-colors text-white" placeholder="••••••••" />
+                    <input type="password" className="w-full bg-white/[0.03] border border-white/10 rounded-2xl pl-14 pr-6 py-4 focus:outline-none focus:border-primary transition-colors text-white" placeholder="••••••••" />
                   </div>
                 </div>
 
