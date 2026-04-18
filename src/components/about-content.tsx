@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Target, Lightbulb } from "lucide-react";
 import Image from "next/image";
 
-import image1 from "../images/image1.png";
 
 export function AboutContent() {
   return (
@@ -47,7 +46,7 @@ export function AboutContent() {
           <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-20 items-center">
               <div className="w-full md:w-1/2 relative aspect-square min-h-[280px] sm:min-h-[360px] rounded-[3rem] overflow-hidden border border-white/5 shadow-2xl bg-zinc-900/20 backdrop-blur-xl">
                   <Image 
-                    src={image1} 
+                    src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=1200" 
                     alt="Creative Hub" 
                     fill 
                     className="object-cover opacity-50 contrast-125 grayscale hover:grayscale-0 transition-all duration-700"

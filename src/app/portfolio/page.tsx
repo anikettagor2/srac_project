@@ -12,7 +12,7 @@ const PROJECTS = [
   {
     title: "Cinematic Travel Vlog",
     category: "YouTube",
-    image: "/src/images/portfolio1.png",
+    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800",
     client: "Alex Wanderlust",
     duration: "12:45",
     tags: ["Color Grading", "Sound Design"],
@@ -20,7 +20,7 @@ const PROJECTS = [
   {
     title: "High-Energy Tech Review",
     category: "YouTube",
-    image: "/src/images/portfolio2.png",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800",
     client: "TechPulse",
     duration: "08:20",
     tags: ["Motion Graphics", "Fast-Cuts"],
@@ -28,7 +28,7 @@ const PROJECTS = [
   {
     title: "Retention-Focused Reel",
     category: "Reels",
-    image: "/src/images/portfolio3.png",
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800",
     client: "GymBro Fitness",
     duration: "00:45",
     tags: ["Short-form", "Viral Pacing"],
@@ -36,7 +36,7 @@ const PROJECTS = [
   {
     title: "Documentary Intro",
     category: "Other",
-    image: "/src/images/hero_img.png",
+    image: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=800",
     client: "Modern History",
     duration: "02:15",
     tags: ["Storytelling", "Cinematic"],
@@ -44,7 +44,7 @@ const PROJECTS = [
   {
     title: "Product Showcase",
     category: "Reels",
-    image: "/src/images/portfolio1.png",
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=800",
     client: "Luxe Watches",
     duration: "00:30",
     tags: ["Luxury", "Transitions"],
@@ -52,7 +52,7 @@ const PROJECTS = [
   {
     title: "Educational Explain Video",
     category: "YouTube",
-    image: "/src/images/portfolio2.png",
+    image: "https://images.unsplash.com/photo-1501503060445-731ecb822998?auto=format&fit=crop&q=80&w=800",
     client: "LearnFast",
     duration: "15:00",
     tags: ["Information Design", "Stock Footage"],
