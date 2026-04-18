@@ -58,25 +58,33 @@ function CyclingWord() {
 }
 
 function Particles() {
+  const [particles, setParticles] = useState<any[]>([]);
   const count = 28;
+
+  useEffect(() => {
+    const newParticles = [...Array(count)].map((_, i) => ({
+      size: Math.random() * 3 + 1,
+      x: Math.random() * 100,
+      duration: Math.random() * 14 + 8,
+      delay: Math.random() * 10,
+      opacity: Math.random() * 0.35 + 0.05,
+    }));
+    setParticles(newParticles);
+  }, []);
+
+  if (particles.length === 0) return null;
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {[...Array(count)].map((_, i) => {
-        const size = Math.random() * 3 + 1;
-        const x = Math.random() * 100;
-        const duration = Math.random() * 14 + 8;
-        const delay = Math.random() * 10;
-        const opacity = Math.random() * 0.35 + 0.05;
-        return (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-primary"
-            style={{ width: size, height: size, left: `${x}%`, bottom: -10, opacity }}
-            animate={{ y: [0, -920], opacity: [opacity, 0] }}
-            transition={{ duration, delay, repeat: Infinity, ease: "linear" }}
-          />
-        );
-      })}
+      {particles.map((p, i) => (
+        <motion.div
+          key={i}
+          className="absolute rounded-full bg-primary"
+          style={{ width: p.size, height: p.size, left: `${p.x}%`, bottom: -10, opacity: p.opacity }}
+          animate={{ y: [0, -920], opacity: [p.opacity, 0] }}
+          transition={{ duration: p.duration, delay: p.delay, repeat: Infinity, ease: "linear" }}
+        />
+      ))}
     </div>
   );
 }
