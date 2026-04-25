@@ -1,45 +1,44 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FolderOpen, ArrowUpRight, PlayCircle, Video, Clapperboard, MonitorPlay, Film, Zap } from "lucide-react";
+import { ArrowUpRight, PieChart, TrendingUp, MapPin, Users, Globe, Activity } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 const portfolioItems = [
   {
-    title: "Short Form Content",
-    category: "Reels & TikToks",
-    link: "https://drive.google.com/drive/folders/1DYUBo8RX514BpcysVIlFHAUstlzTnCZ1?usp=drive_link",
-    gradient: "from-pink-500 via-red-500 to-yellow-500", // Instagram/TikTok vibe
-    icon: Zap,
+    title: "General Election 2024",
+    category: "National Level Simulation",
+    link: "/simulate",
+    gradient: "from-orange-500 via-white to-green-500", // India Flag vibe
+    icon: Globe,
   },
   {
-    title: "Commercial Edits",
-    category: "Ads & Promos",
-    link: "https://drive.google.com/drive/folders/14nEGKk7ZeIlcFUvaQwmv3uwjXAkEG5tE?usp=drive_link",
-    gradient: "from-blue-600 via-indigo-500 to-cyan-400", // Corporate/Trust vibe
-    icon: MonitorPlay,
+    title: "State Assembly Pulse",
+    category: "Regional Power Dynamics",
+    link: "/simulate",
+    gradient: "from-blue-600 via-indigo-500 to-cyan-400", // Professional/Analytical
+    icon: MapPin,
   },
   {
-    title: "YouTube Long Form",
-    category: "Storytelling & retention",
-    link: "https://drive.google.com/drive/folders/1uqzEvsRSVpj3oGZRMDlbBhekkOYJxUqk?usp=drive_link",
-    gradient: "from-red-600 to-red-900", // YouTube vibe
-    icon: Video,
+    title: "Swing Voter Analysis",
+    category: "Demographic Modeling",
+    link: "/simulate",
+    gradient: "from-purple-600 to-pink-600", // Social/Voter vibe
+    icon: Users,
   },
   {
-    title: "Documentary Style",
-    category: "Cinematic narratives",
-    link: "https://drive.google.com/drive/folders/15YARJwHmVRFwuxeUjz5LvbdF7uWoK-QH?usp=drive_link",
-    gradient: "from-stone-700 to-stone-900", // Gritty/Doc vibe
-    icon: Film,
+    title: "Economic Impact Engine",
+    category: "Policy Outcome Metrics",
+    link: "/simulate",
+    gradient: "from-emerald-500 to-teal-800", // Money/Success vibe
+    icon: TrendingUp,
   },
   {
-    title: "Brand Promos",
-    category: "Motion Graphics",
-    link: "https://drive.google.com/drive/folders/1kaWHpiP8BcjrH41YiuXhb8Xv6BVgxc0j?usp=drive_link",
-    gradient: "from-purple-600 to-indigo-900", // Premium/Creative vibe
-    icon: Clapperboard,
+    title: "Voter Sentiment Index",
+    category: "Real-time AI Tracking",
+    link: "/simulate",
+    gradient: "from-zinc-700 to-black", // Tech/Dark vibe
+    icon: Activity,
   },
 ];
 
@@ -57,14 +56,14 @@ export function Work() {
               className="text-center mb-16 space-y-4"
            >
                 <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-2">
-                    <PlayCircle className="w-4 h-4 text-primary" />
-                    <span className="text-sm font-medium text-primary">Recent Projects</span>
+                    <PieChart className="w-4 h-4 text-primary" />
+                    <span className="text-sm font-medium text-primary">Simulation Scenarios</span>
                 </div>
                <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold font-heading">
-                   Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">Masterpieces</span>
+                   Predictive <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">Case Studies</span>
                </h2>
                <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-                   Explore our curated collections of video edits. Every cut, transition, and effect is crafted to perfection.
+                   Explore our high-fidelity simulations that accurately modeled major electoral shifts and voter behavior across the globe.
                </p>
            </motion.div>
 
@@ -87,10 +86,10 @@ function PortfolioCard({ title, category, link, gradient, icon: Icon, index }: a
             transition={{ delay: index * 0.1 }}
             className="group relative h-full"
         >
-            <Link href={link} target="_blank" rel="noopener noreferrer" className="block h-full">
+            <Link href={link} className="block h-full">
                 <div className="relative overflow-hidden rounded-3xl bg-secondary border border-white/5 hover:border-primary/50 transition-all duration-500 h-full flex flex-col group-hover:shadow-[0_0_40px_rgba(99,102,241,0.2)]">
                     
-                    {/* Visual Cover Section (Placeholder for Image) */}
+                    {/* Visual Cover Section (Gradient + Icon) */}
                     <div className={`relative w-full aspect-[16/10] bg-gradient-to-br ${gradient} p-6 flex items-center justify-center overflow-hidden`}>
                          <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
                          
@@ -105,7 +104,7 @@ function PortfolioCard({ title, category, link, gradient, icon: Icon, index }: a
                          {/* Overlay Text "Preview" */}
                          <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                               <span className="text-white font-medium tracking-wide bg-black/50 backdrop-blur-md px-6 py-2 rounded-full border border-white/20">
-                                View Folder
+                                Launch Simulation
                               </span>
                          </div>
                     </div>

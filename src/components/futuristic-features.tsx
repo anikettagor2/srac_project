@@ -3,46 +3,44 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Layers, Monitor, Share2, Video, Wand2, Zap } from "lucide-react";
 import { motion } from "framer-motion";
-
-gsap.registerPlugin(ScrollTrigger);
+import { BarChart3, Brain, Target, Wallet, GitBranch, LayoutDashboard } from "lucide-react";
 
 const features = [
   {
-    title: "Cinematic Editing",
-    description: "We don't just cut clips. We craft cinematic journeys that captivate your audience from the first frame to the last.",
-    icon: <Video className="w-10 h-10" />,
+    title: "Predictive Analytics",
+    description: "Go beyond polling. Our models use historical data and current trends to project election outcomes with high precision.",
+    icon: <BarChart3 className="w-10 h-10" />,
     color: "var(--neon-blue)"
   },
   {
-    title: "AI-Powered Enhancements",
-    description: "Leveraging state-of-the-art AI tools for upscaling, noise reduction, and smart color grading to give you the edge.",
-    icon: <Wand2 className="w-10 h-10" />,
+    title: "Gemini 1.5 Pro AI",
+    description: "Leveraging state-of-the-art Large Language Models to simulate complex voter reasoning and socio-political dynamics.",
+    icon: <Brain className="w-10 h-10" />,
     color: "var(--neon-purple)"
   },
   {
-    title: "Viral Storytelling",
-    description: "Designed for retention. Our editing styles are optimized for TikTok, Reels, and YouTube Shorts algorithms.",
-    icon: <Zap className="w-10 h-10" />,
+    title: "Demographic Targeting",
+    description: "Identify key voter segments across urban, rural, and youth populations to optimize campaign messaging.",
+    icon: <Target className="w-10 h-10" />,
     color: "var(--neon-pink)"
   },
   {
-    title: "Sound Design",
-    description: "Immersive audio landscapes featuring custom foley, trending music selection, and crystal clear voice mastering.",
-    icon: <Layers className="w-10 h-10" />,
+    title: "Budget Modeling",
+    description: "Simulate the impact of every dollar spent. Find the optimal split between digital, ground, and traditional media.",
+    icon: <Wallet className="w-10 h-10" />,
     color: "var(--neon-green)"
   },
   {
-    title: "Brand Strategy",
-    description: "Every edit aligns with your unique brand voice, ensuring consistency across all digital touchpoints.",
-    icon: <Monitor className="w-10 h-10" />,
+    title: "Scenario Planning",
+    description: "What if turnout drops? What if a key decision backfires? Model thousands of 'What-If' scenarios instantly.",
+    icon: <GitBranch className="w-10 h-10" />,
     color: "var(--primary)"
   },
   {
-    title: "Multi-Platform Delivery",
-    description: "Get your masters delivered in any format, optimized for every platform you dominate.",
-    icon: <Share2 className="w-10 h-10" />,
+    title: "Outcome Visualization",
+    description: "Transform complex data into intuitive, high-fidelity dashboards that reveal the clear path to victory.",
+    icon: <LayoutDashboard className="w-10 h-10" />,
     color: "var(--neon-blue)"
   }
 ];
@@ -51,6 +49,7 @@ export function FuturisticFeatures() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     if (!sectionRef.current) return;
     const cards = gsap.utils.toArray(".feature-card");
     
@@ -85,10 +84,10 @@ export function FuturisticFeatures() {
             Capabilities
           </motion.div>
           <h2 className="text-4xl md:text-7xl font-black mb-6 tracking-tighter uppercase text-white">
-            High Performance <span className="text-primary italic">Editing</span>
+            Precision Election <span className="text-primary italic">Intelligence</span>
           </h2>
           <p className="text-gray-400 max-w-2xl text-lg font-medium">
-            We operate at the intersection of technology and creativity to deliver results that conventional agencies can only dream of.
+            We operate at the intersection of data science and political strategy to deliver projections that conventional pollsters can only dream of.
           </p>
         </div>
 

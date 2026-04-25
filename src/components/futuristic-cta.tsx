@@ -36,8 +36,8 @@ export function FuturisticCTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-[0.9] tracking-tighter font-heading uppercase"
               >
-                Scale Your <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-violet-400 to-primary">Content Engine</span>
+                Simulate Your <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-violet-400 to-primary">Next Election</span>
               </motion.h2>
 
               <motion.p 
@@ -45,7 +45,7 @@ export function FuturisticCTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="text-lg text-zinc-500 max-w-lg leading-relaxed font-jakarta"
               >
-                Join the global syndicate of creators who have outsourced their post-production to Viosner. High-fidelity editing at tactical speeds.
+                Join top-tier political strategists who leverage our AI to accurately forecast elections. Predictive analytics at the speed of thought.
               </motion.p>
 
               <motion.div
@@ -53,16 +53,16 @@ export function FuturisticCTA() {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="flex flex-col sm:flex-row gap-4 pt-4"
               >
-                <Link href="/signup" className="w-full sm:w-auto">
+                <Link href="/simulate" className="w-full sm:w-auto">
                   <button className="group flex items-center justify-center gap-4 px-10 py-5 bg-white text-black font-black text-xs uppercase tracking-[0.2em] rounded-2xl hover:bg-zinc-200 transition-all font-mono">
-                    Initialize Project
+                    Run Simulation
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                   </button>
                 </Link>
-                <Link href="/contact" className="w-full sm:w-auto">
+                <Link href="/results" className="w-full sm:w-auto">
                   <button className="flex items-center justify-center gap-4 px-10 py-5 bg-white/5 border border-white/10 text-white font-black text-xs uppercase tracking-[0.2em] rounded-2xl hover:bg-white/10 transition-all font-mono">
                     <Terminal className="w-4 h-4" />
-                    Open COMMS
+                    View Dashboard
                   </button>
                 </Link>
               </motion.div>
@@ -76,23 +76,23 @@ export function FuturisticCTA() {
             >
               <FeatureCard 
                 icon={<Clock className="w-5 h-5" />}
-                title="Rapid Sync"
-                desc="24-48 hour tactical turnaround"
+                title="Rapid Analysis"
+                desc="<2s real-time turnaround"
               />
               <FeatureCard 
                 icon={<Shield className="w-5 h-5" />}
-                title="Vault Security"
-                desc="Encrypted asset management"
+                title="Secure Models"
+                desc="Encrypted data management"
               />
               <FeatureCard 
                 icon={<Users className="w-5 h-5" />}
-                title="Elite Editors"
-                desc="Dedicated creative task force"
+                title="Elite Models"
+                desc="Gemini 1.5 Pro inference"
               />
               <FeatureCard 
                 icon={<Terminal className="w-5 h-5" />}
-                title="Direct Link"
-                desc="Real-time mission coordination"
+                title="Live Link"
+                desc="Real-time streaming insights"
               />
             </motion.div>
           </div>
@@ -100,10 +100,10 @@ export function FuturisticCTA() {
 
         {/* Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24">
-          <StatItem value="10K+" label="SYNCS COMPLETED" />
-          <StatItem value="24H" label="AVG TURNAROUND" />
-          <StatItem value="1B+" label="VIEWS IMPACTED" />
-          <StatItem value="99%" label="MISSION SUCCESS" />
+          <StatItem value="1M+" label="SIMULATIONS RUN" />
+          <StatItem value="<2s" label="AVG TURNAROUND" />
+          <StatItem value="1B+" label="VOTES MODELED" />
+          <StatItem value="99%" label="ACCURACY RATE" />
         </div>
       </div>
     </section>

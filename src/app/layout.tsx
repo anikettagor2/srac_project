@@ -19,8 +19,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Viosner | Premium Video Editing Agency",
-  description: "Transform your raw footage into cinematic masterpieces. Professional video editing, scriptwriting, and thumbnail design.",
+  title: "Electra | Premium Election Simulation AI",
+  description: "Predict democratic outcomes with unprecedented accuracy. Advanced demographic analysis and real-time scenario simulation.",
 };
 
 import { SmoothScroll } from "@/components/smooth-scroll";

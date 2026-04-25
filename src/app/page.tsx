@@ -11,7 +11,7 @@ import { ScrollText } from "@/components/home/scroll-text";
 import { FuturisticCTA } from "@/components/futuristic-cta";
 import { CustomCursor } from "@/components/home/custom-cursor";
 import { ImmersiveBackground } from "@/components/home/immersive-background";
-import { EditingTimeline } from "@/components/home/editing-timeline";
+import { EVMAnimation } from "@/components/home/evm-animation";
 
 export default function Home() {
   return (
@@ -27,7 +27,7 @@ export default function Home() {
 
         <StickyScroll />
 
-        <EditingTimeline />
+        <EVMAnimation />
 
         <BeforeAfter />
 

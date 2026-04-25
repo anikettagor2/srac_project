@@ -5,28 +5,24 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 
-import image1 from "../../images/image1.png";
-import image2 from "../../images/image2.png";
-import image3 from "../../images/image3.png";
-
 const PROCESS_STEPS = [
     {
         step: "01",
-        title: "Tactical Data Ingest",
-        description: "Upload your raw visual assets via our encrypted pipeline. We support multi-resolution ingest with parity checking.",
-        image: image1
+        title: "Demographic Ingest",
+        description: "Input localized voter profiles, historical turnouts, and budget constraints into our secure simulation engine.",
+        image: "/images/election_strategy_hq.png"
     },
     {
         step: "02",
-        title: "Syndicate Coordination",
-        description: "Your project is assigned to a tactical editor. Collaborate via timestamped telemetry and real-time com-links.",
-        image: image2
+        title: "Strategy Calibration",
+        description: "Adjust your campaign variables. Target specific states, optimize budget allocation, and see projected shifts in sentiment.",
+        image: "/images/political_data_viz.png"
     },
     {
         step: "03",
-        title: "Final Deployment",
-        description: "Receive high-fidelity renders within 24-48 hours. Multi-platform optimization included in every deployment.",
-        image: image3
+        title: "Outcome Projection",
+        description: "Receive high-fidelity Gemini 1.5 Pro analysis detailing win probability, vote share margins, and strategic vulnerabilities.",
+        image: "/images/parliament_victory_night.png"
     }
 ];
 
@@ -78,13 +74,13 @@ export function StickyScroll() {
     return (
         <section ref={sectionRef} className="relative bg-black py-24 sm:py-40 px-6 overflow-hidden">
             <div className="max-w-7xl mx-auto mb-24">
-                <span className="text-primary text-[10px] font-black uppercase tracking-[0.4em] mb-4 block font-mono">PROTOCOL // WORKFLOW</span>
+                <span className="text-primary text-[10px] font-black uppercase tracking-[0.4em] mb-4 block font-mono">PROTOCOL // SIMULATION</span>
                 <h2 className="text-4xl sm:text-6xl md:text-8xl font-black text-white mb-8 font-heading tracking-tighter uppercase leading-[0.85]">
-                    The Viosner <br />
+                    The Predictive <br />
                     <span className="text-zinc-800 italic">Methodology</span>
                 </h2>
                 <p className="text-lg text-zinc-500 max-w-2xl font-jakarta">
-                    Surgical precision in every frame. We've optimized the creative process to deliver cinematic impact at the speed of culture.
+                    Surgical precision in data modeling. We've optimized the forecasting process to deliver political intelligence at the speed of strategy.
                 </p>
             </div>
 

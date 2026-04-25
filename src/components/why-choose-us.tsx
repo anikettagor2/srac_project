@@ -5,23 +5,23 @@ import { CheckCircle2, Zap, Trophy, Users, Star } from "lucide-react";
 
 const features = [
   {
-    title: "Cinematic Quality",
-    description: "Every frame polished to perfection with top-tier color grading and sound design.",
+    title: "Data Precision",
+    description: "Every simulation is backed by high-fidelity demographic models and current political trends.",
     icon: Trophy,
   },
   {
-    title: "Lightning Fast Delivery",
-    description: "48-hour turnaround for most projects so you never miss a post schedule.",
+    title: "Real-time Analysis",
+    description: "Get comprehensive election results and sentiment projections in under 2 seconds.",
     icon: Zap,
   },
   {
-    title: "Retention-Focused",
-    description: "Edits engineered to hook viewers in the first 3 seconds and hold them.",
+    title: "Cause-Effect Modeling",
+    description: "Understand exactly how your budget and policy decisions sway specific voter segments.",
     icon: Users,
   },
   {
-    title: "Unlimited Revisions",
-    description: "We refine the work until it meets your exact vision, guaranteed.",
+    title: "Infinite Scenarios",
+    description: "Test thousands of variables to find the winning strategy for any electoral environment.",
     icon: CheckCircle2,
   }
 ];
@@ -42,11 +42,11 @@ export function WhyChooseUs() {
                    >
                        <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6">
                           <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                          <span className="text-sm font-medium text-yellow-500">Industry Leader</span>
+                          <span className="text-sm font-medium text-yellow-500">Global Standard</span>
                        </div>
                        <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold font-heading leading-tight">
-                          Why Top Creators <br />
-                          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">Choose Viosner</span>
+                          Why Strategic Leaders <br />
+                          <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">Choose Electra</span>
                        </h2>
                    </motion.div>
 
@@ -55,9 +55,9 @@ export function WhyChooseUs() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: 0.2 }}
-                      className="text-xl text-muted-foreground leading-relaxed"
+                      className="text-xl text-zinc-400 leading-relaxed"
                    >
-                      We don't just edit videos; we engineer growth. Our team understands the algorithm, psychology, and art of digital storytelling.
+                      We don't just calculate votes; we model behavior. Our engine integrates complex socio-political factors with state-of-the-art AI.
                    </motion.p>
 
                    {/* Stats */}
@@ -69,16 +69,16 @@ export function WhyChooseUs() {
                         className="grid grid-cols-3 gap-4 sm:gap-8 pt-8 border-t border-white/10"
                    >
                        <div>
+                           <h4 className="text-2xl sm:text-3xl font-bold text-white">1M+</h4>
+                           <p className="text-sm text-zinc-500">Simulations Run</p>
+                       </div>
+                       <div>
                            <h4 className="text-2xl sm:text-3xl font-bold text-white">500+</h4>
-                           <p className="text-sm text-muted-foreground">Videos Edited</p>
+                           <p className="text-sm text-zinc-500">Parties Modeled</p>
                        </div>
                        <div>
-                           <h4 className="text-2xl sm:text-3xl font-bold text-white">100M+</h4>
-                           <p className="text-sm text-muted-foreground">Views Generated</p>
-                       </div>
-                       <div>
-                           <h4 className="text-2xl sm:text-3xl font-bold text-white">50+</h4>
-                           <p className="text-sm text-muted-foreground">Happy Clients</p>
+                           <h4 className="text-2xl sm:text-3xl font-bold text-white">99%</h4>
+                           <p className="text-sm text-zinc-500">Accuracy Rate</p>
                        </div>
                    </motion.div>
                </div>
@@ -104,13 +104,13 @@ function FeatureCard({ title, description, icon: Icon, delay }: any) {
             viewport={{ once: true }}
             transition={{ delay, duration: 0.5 }}
             whileHover={{ y: -5 }}
-            className="p-8 rounded-3xl bg-secondary/30 border border-white/5 hover:bg-secondary hover:border-primary/20 transition-all duration-300"
+            className="p-8 rounded-3xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] hover:border-primary/20 transition-all duration-300"
         >
-             <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 text-primary">
+             <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary">
                 <Icon className="w-6 h-6" />
              </div>
              <h3 className="text-lg font-bold mb-3 text-white">{title}</h3>
-             <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
+             <p className="text-zinc-400 text-sm leading-relaxed">{description}</p>
         </motion.div>
     )
 }

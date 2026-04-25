@@ -4,49 +4,49 @@ import { motion, type Variants } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { LenisProvider } from "@/components/home/lenis-provider";
-import { Check, ArrowRight, Zap, Film, Mic, Image as ImageIcon, Play, BarChart3, Palette } from "lucide-react";
+import { Check, ArrowRight, Zap, Film, Mic, Image as ImageIcon, Play, BarChart3, Palette, Globe, Target, Users, Brain, MessageSquare } from "lucide-react";
 import Link from "next/link";
 
 const SERVICES = [
   {
-    icon: Film,
-    title: "YouTube Video Editing",
-    price: "₹2,999",
-    desc: "Full long-form YouTube video editing — cuts, b-roll, color grade, motion graphics, subtitles, and thumbnail-ready thumbnail frame extraction.",
-    features: ["Up to 30-min video", "Color grading", "Custom motion graphics", "Subtitles/captions", "2 revision rounds"],
-    badge: "Most Popular",
+    icon: Globe,
+    title: "National Simulation",
+    price: "₹49,999",
+    desc: "Comprehensive country-wide election modeling with multi-state coordination, budget optimization, and nationwide sentiment analysis.",
+    features: ["All 543 Constituencies", "Budget optimization", "Policy impact modeling", "Coalition dynamics", "Detailed report"],
+    badge: "Enterprise",
     color: "from-violet-500/20 to-indigo-500/20",
     border: "border-violet-500/30",
     iconColor: "text-violet-400"
   },
   {
-    icon: Play,
-    title: "Short-form Reels & Shorts",
-    price: "₹999",
-    desc: "High-retention vertical video edits optimized for Instagram Reels, YouTube Shorts and TikTok with hook-first structure and viral pacing.",
-    features: ["Up to 60 seconds", "Trending audio sync", "On-screen text/captions", "Aspect ratio export (9:16)", "Unlimited reels packs available"],
-    badge: "Fast Delivery",
+    icon: Target,
+    title: "State-Level Analytics",
+    price: "₹14,999",
+    desc: "Hyper-local simulation for individual state elections. We model assembly-level shifts and regional anti-incumbency waves.",
+    features: ["All Assembly seats", "Regional sentiment pulse", "Caste arithmetic modeling", "Local issue tracking", "Win probability mapping"],
+    badge: "Most Popular",
     color: "from-rose-500/20 to-pink-500/20",
     border: "border-rose-500/30",
     iconColor: "text-rose-400"
   },
   {
-    icon: Mic,
-    title: "Podcast Editing",
-    price: "₹1,499",
-    desc: "Professional podcast audio cleanup with noise removal, EQ, leveling, and an optional video version with waveform animation for YouTube.",
-    features: ["Noise removal & EQ", "Intro/Outro music", "Chapter markers", "Transcript (optional)", "MP3 + WAV export"],
+    icon: Users,
+    title: "Demographic Modeling",
+    price: "₹7,499",
+    desc: "Targeted analysis of specific voter segments. Understand how youth, urban, and rural voters react to your campaign decisions.",
+    features: ["Voter segment profiling", "Sentiment drift analysis", "Messaging resonance", "Turnout projections", "Segment-specific strategy"],
     badge: null,
     color: "from-amber-500/20 to-orange-500/20",
     border: "border-amber-500/30",
     iconColor: "text-amber-400"
   },
   {
-    icon: Palette,
-    title: "Thumbnail Design",
-    price: "₹499",
-    desc: "Click-bait worthy, brand-consistent thumbnails designed from scratch using psychology-backed composition and bold typography.",
-    features: ["Custom designed", "Face prominence layout", "Bold contrast", "PNG + PSD source file", "Turnaround: 12 hrs"],
+    icon: Brain,
+    title: "AI Insights Engine",
+    price: "₹1,999/sim",
+    desc: "One-off rapid simulation using Gemini 1.5 Pro. Get instant feedback on a specific set of decisions or budget splits.",
+    features: ["Real-time AI analysis", "What-if scenarios", "Budget impact split", "AI executive summary", "Instant turnaround"],
     badge: "Quick",
     color: "from-emerald-500/20 to-teal-500/20",
     border: "border-emerald-500/30",
@@ -54,21 +54,21 @@ const SERVICES = [
   },
   {
     icon: BarChart3,
-    title: "Bulk Editing Plan",
-    price: "₹9,999/mo",
-    desc: "Dedicated editor assigned to your channel. Deliver up to 20 videos per month with consistent style, branding, and zero communication lag.",
-    features: ["20 videos/month", "Dedicated editor", "Same-day revisions", "Brand kit integration", "Monthly analytics report"],
+    title: "Elite Campaign Plan",
+    price: "₹99,999/mo",
+    desc: "Continuous monitoring and simulation. We run daily simulations as polling data changes, providing a persistent edge.",
+    features: ["Daily re-simulations", "Polling data integration", "Dedicated strategist", "Unlimited scenarios", "Live dashboard access"],
     badge: "Best Value",
     color: "from-blue-500/20 to-cyan-500/20",
     border: "border-blue-500/30",
     iconColor: "text-blue-400"
   },
   {
-    icon: ImageIcon,
-    title: "Scriptwriting",
-    price: "₹1,999",
-    desc: "SEO-optimised, retention-engineered scripts written for your niche and voice — ready to record in under 24 hours.",
-    features: ["Up to 2,000 words", "Hook + CTA included", "SEO keyword research", "2 revisions", "Script + outline file"],
+    icon: MessageSquare,
+    title: "Strategic Consultation",
+    price: "₹9,999",
+    desc: "Expert-led strategy session to interpret simulation results and refine campaign messaging based on AI insights.",
+    features: ["1-on-1 strategy call", "Insight interpretation", "Message refinement", "Risk assessment", "Executive summary"],
     badge: null,
     color: "from-purple-500/20 to-fuchsia-500/20",
     border: "border-purple-500/30",
@@ -77,10 +77,10 @@ const SERVICES = [
 ];
 
 const FAQS = [
-  { q: "How many revisions are included?", a: "Each individual project comes with 2 revision rounds. Our bulk plans offer unlimited revisions to ensure your content is perfect." },
-  { q: "What is your turnaround time?", a: "Most projects are delivered within 48-72 hours. Thumbnails and short-form video packs can be delivered in as little as 24 hours." },
-  { q: "What formats do you accept?", a: "We accept all major formats — MP4, MOV, AVI, MKV, HEVC. Simply upload via our secure platform after placing an order." },
-  { q: "Do you work with international clients?", a: "Yes! We work with creators worldwide. Payments can be made via card, PayPal, or UPI. All prices are in INR by default but we take USD/GBP too." },
+  { q: "How accurate are the simulations?", a: "Our simulations leverage Gemini 1.5 Pro and historical data, typically achieving over 90% correlation with actual outcomes when provided with high-quality polling inputs." },
+  { q: "Can we integrate our own polling data?", a: "Yes, our Elite plans allow you to ingest custom polling and demographic data for hyper-specific local modeling." },
+  { q: "What is the turnaround time?", a: "Rapid AI simulations are nearly instantaneous. Detailed National and State reports are delivered within 12-24 hours." },
+  { q: "Do you support local/municipal elections?", a: "Yes, we can model everything from local ward-level contests to full national general elections." },
 ];
 
 const fadeUp: Variants = {

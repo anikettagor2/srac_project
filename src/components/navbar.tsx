@@ -26,9 +26,9 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
+    { name: "Elections", href: "/elections" },
+    { name: "Simulate", href: "/simulate" },
     { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Portfolio", href: "/portfolio" },
   ];
 
   return (
@@ -48,8 +48,8 @@ export function Navbar() {
           {/* Logo Section */}
           <Link href="/" className="flex items-center gap-2 group flex-shrink-0">
               <div className="flex flex-col">
-                  <span className="text-xl font-black text-white tracking-tighter font-heading leading-none">VIOSNER<span className="text-primary italic">.</span></span>
-                  <span className="text-[7px] uppercase tracking-[0.4em] text-primary/80 font-mono font-bold">Protocol Alpha</span>
+                  <span className="text-xl font-black text-white tracking-tighter font-heading leading-none">ELECTRA<span className="text-primary italic">.</span></span>
+                  <span className="text-[7px] uppercase tracking-[0.4em] text-primary/80 font-mono font-bold">Sim Engine</span>
               </div>
           </Link>
 
@@ -71,11 +71,11 @@ export function Navbar() {
 
           <div className="flex items-center gap-4">
             <Link 
-              href="/contact" 
+              href="/simulate" 
               className="hidden sm:flex items-center gap-2 px-5 py-2 rounded-full bg-white text-black text-[10px] font-bold uppercase tracking-widest hover:bg-zinc-200 transition-all font-mono"
             >
               <Terminal className="w-3 h-3" />
-              Contact
+              Simulate
             </Link>
 
             <button 
@@ -98,7 +98,7 @@ export function Navbar() {
             className="fixed inset-0 z-[110] bg-black p-8 flex flex-col font-heading"
           >
             <div className="flex justify-between items-center mb-16">
-              <span className="text-2xl font-black text-white">VIOSNER<span className="text-primary">.</span></span>
+              <span className="text-2xl font-black text-white">ELECTRA<span className="text-primary">.</span></span>
               <button onClick={() => setIsOpen(false)} className="p-2 text-white">
                 <X className="w-8 h-8" />
               </button>
@@ -119,11 +119,11 @@ export function Navbar() {
 
             <div className="pb-12 pt-8 border-t border-white/10">
               <Link 
-                href="/contact"
+                href="/simulate"
                 className="w-full py-5 rounded-2xl bg-primary text-white text-center font-bold text-lg inline-block"
                 onClick={() => setIsOpen(false)}
               >
-                Start Your Project
+                Run Simulation
               </Link>
             </div>
           </motion.div>

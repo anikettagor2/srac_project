@@ -1,29 +1,29 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Film, PenTool, Image, Layers, ArrowRight } from "lucide-react";
+import { Users, Target, BarChart, Zap, ArrowRight, Activity, Globe, MessageSquare } from "lucide-react";
 import Link from "next/link";
 
 const services = [
   {
-    title: "Short-form Editing",
-    description: "Engaging Reels, TikToks, and Shorts designed to boost retention and virality. We nail the pacing and effects.",
-    icon: Film,
+    title: "Demographic Analysis",
+    description: "Deep-dive into voter segments. We model behavior across age, region, and economic status to find your winning path.",
+    icon: Users,
   },
   {
-    title: "Scriptwriting",
-    description: "Compelling narratives and hooks attached to psychology-driven storytelling that keeps your audience watching.",
-    icon: PenTool,
+    title: "Strategic Planning",
+    description: "Policy impact assessment and messaging strategy. We help you craft narratives that resonate with key voter bases.",
+    icon: Target,
   },
   {
-    title: "Thumbnail Design",
-    description: "High-CTR, curiosity-inducing thumbnails that scream 'Click Me' instantly.",
-    icon: Image,
+    title: "Budget Optimization",
+    description: "Maximize your campaign's reach. Our AI simulates budget splits between digital, ground, and traditional media.",
+    icon: BarChart,
   },
   {
-    title: "Bulk Video Editing",
-    description: "Scalable editing solutions for podcasters, courses, and content machines handling massive volume.",
-    icon: Layers,
+    title: "Predictive Modeling",
+    description: "Real-time election outcome projections. Process millions of data points to anticipate swings and turnouts.",
+    icon: Zap,
   },
 ];
 
@@ -51,7 +51,7 @@ export function Services() {
                 transition={{ delay: 0.1 }}
                 className="text-muted-foreground text-lg max-w-2xl mx-auto"
             >
-                Comprehensive creative solutions tailored for modern digital growth.
+                Advanced simulation capabilities designed for strategic electoral success.
             </motion.p>
         </div>
 

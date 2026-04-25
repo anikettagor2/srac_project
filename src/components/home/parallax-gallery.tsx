@@ -7,11 +7,11 @@ import Image from "next/image";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 const GALLERY_IMAGES = [
-    { url: "https://images.unsplash.com/photo-1542204172-3c1f81d05d70?q=80&w=2000", size: "col-span-1 row-span-2", speed: 0.1 },
-    { url: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2000", size: "col-span-1 row-span-1", speed: 0.2 },
-    { url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2000", size: "col-span-2 row-span-1", speed: -0.15 },
-    { url: "https://images.unsplash.com/photo-1557683316-973673baf926?q=80&w=2000", size: "col-span-1 row-span-1", speed: 0.3 },
-    { url: "https://images.unsplash.com/photo-1485846234645-a62644ef7467?q=80&w=2000", size: "col-span-1 row-span-2", speed: -0.25 },
+    { url: "https://images.unsplash.com/photo-1540910077472-7bc0272b5314?q=80&w=2000", size: "col-span-1 row-span-2", speed: 0.1 }, // Voting
+    { url: "https://images.unsplash.com/photo-1575320181282-9afab399332c?q=80&w=2000", size: "col-span-1 row-span-1", speed: 0.2 }, // Parliament
+    { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000", size: "col-span-2 row-span-1", speed: -0.15 }, // Dashboard
+    { url: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?q=80&w=2000", size: "col-span-1 row-span-1", speed: 0.3 }, // Gov building
+    { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2000", size: "col-span-1 row-span-2", speed: -0.25 }, // Data center
 ];
 
 function TiltCard({ img, i }: { img: any, i: number }) {
@@ -64,7 +64,7 @@ function TiltCard({ img, i }: { img: any, i: number }) {
             </div>
 
             <div style={{ transform: "translateZ(75px)" }} className="absolute bottom-8 left-8 z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-4 group-hover:translate-y-0">
-                <span className="text-white font-black uppercase text-2xl tracking-tighter font-heading italic">Visual Evidence</span>
+                <span className="text-white font-black uppercase text-2xl tracking-tighter font-heading italic">Modeled Outcomes</span>
             </div>
         </motion.div>
     );
@@ -102,14 +102,14 @@ export function ParallaxGallery() {
             <div className="max-w-7xl mx-auto space-y-24">
                 <div className="flex flex-col md:flex-row items-end justify-between gap-8">
                     <div className="max-w-2xl">
-                        <span className="text-primary text-[10px] font-black uppercase tracking-[0.5em] mb-4 block font-mono">DECRYPTED // ARCHIVES</span>
+                        <span className="text-primary text-[10px] font-black uppercase tracking-[0.5em] mb-4 block font-mono">SIMULATED // SCENARIOS</span>
                         <h2 className="text-5xl sm:text-7xl md:text-9xl font-black uppercase tracking-tighter text-white font-heading leading-none">
-                            Tactical <br />
+                            Strategic <br />
                             <span className="text-zinc-800 italic">Playbook</span>
                         </h2>
                     </div>
                     <p className="text-zinc-500 max-w-sm text-lg font-mono text-sm leading-relaxed mb-4">
-                        A curated archive of high-fidelity cinematic narratives. Encrypted assets. Verified results.
+                        A curated gallery of simulated election scenarios. Demographic models. Verified projections.
                     </p>
                 </div>
 

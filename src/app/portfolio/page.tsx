@@ -4,62 +4,62 @@ import { motion, type Variants } from "framer-motion";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { LenisProvider } from "@/components/home/lenis-provider";
-import { Play, ExternalLink, Filter, ArrowUpRight, Youtube, Video, Instagram } from "lucide-react";
+import { Globe, Target, Users, BarChart3, ArrowUpRight, Shield, Zap, Search } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-const PROJECTS = [
+const SIMULATIONS = [
   {
-    title: "Cinematic Travel Vlog",
-    category: "YouTube",
-    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&q=80&w=800",
-    client: "Alex Wanderlust",
-    duration: "12:45",
-    tags: ["Color Grading", "Sound Design"],
+    title: "2024 General Election Model",
+    category: "National",
+    image: "https://images.unsplash.com/photo-1540910419892-f7ef7173fdd4?auto=format&fit=crop&q=80&w=800",
+    client: "Unified Alliance",
+    accuracy: "98.2%",
+    tags: ["Seat Projection", "Coalition Math"],
   },
   {
-    title: "High-Energy Tech Review",
-    category: "YouTube",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800",
-    client: "TechPulse",
-    duration: "08:20",
-    tags: ["Motion Graphics", "Fast-Cuts"],
+    title: "UP Assembly Micro-Targeting",
+    category: "State",
+    image: "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&q=80&w=800",
+    client: "Regional Progress Party",
+    accuracy: "96.5%",
+    tags: ["Caste Dynamics", "Booth Analysis"],
   },
   {
-    title: "Retention-Focused Reel",
-    category: "Reels",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=800",
-    client: "GymBro Fitness",
-    duration: "00:45",
-    tags: ["Short-form", "Viral Pacing"],
+    title: "Urban Youth Sentiment Shift",
+    category: "Demographic",
+    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800",
+    client: "Youth Forward Init.",
+    accuracy: "94.8%",
+    tags: ["Social Media Pulse", "Jobs Policy"],
   },
   {
-    title: "Documentary Intro",
-    category: "Other",
-    image: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&q=80&w=800",
-    client: "Modern History",
-    duration: "02:15",
-    tags: ["Storytelling", "Cinematic"],
+    title: "Karnataka Anti-Incumbency Map",
+    category: "State",
+    image: "https://images.unsplash.com/photo-1577412647305-991150c7d163?auto=format&fit=crop&q=80&w=800",
+    client: "Democratic Front",
+    accuracy: "97.1%",
+    tags: ["Wave Detection", "Regional Grievances"],
   },
   {
-    title: "Product Showcase",
-    category: "Reels",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=800",
-    client: "Luxe Watches",
-    duration: "00:30",
-    tags: ["Luxury", "Transitions"],
+    title: "Diaspora Impact Simulation",
+    category: "Regional",
+    image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=80&w=800",
+    client: "Global Indian Forum",
+    accuracy: "95.9%",
+    tags: ["Foreign Funding", "Soft Power"],
   },
   {
-    title: "Educational Explain Video",
-    category: "YouTube",
-    image: "https://images.unsplash.com/photo-1501503060445-731ecb822998?auto=format&fit=crop&q=80&w=800",
-    client: "LearnFast",
-    duration: "15:00",
-    tags: ["Information Design", "Stock Footage"],
+    title: "Agricultural Belt Swing Study",
+    category: "Demographic",
+    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800",
+    client: "Farmers Union",
+    accuracy: "93.4%",
+    tags: ["MSP Impact", "Rural Turnout"],
   },
 ];
 
-const CATEGORIES = ["All", "YouTube", "Reels", "Other"];
+const CATEGORIES = ["All", "National", "State", "Demographic", "Regional"];
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -74,7 +74,7 @@ const stagger = {
 export default function PortfolioPage() {
   const [filter, setFilter] = useState("All");
 
-  const filteredProjects = PROJECTS.filter(p => filter === "All" || p.category === filter);
+  const filteredSimulations = SIMULATIONS.filter(p => filter === "All" || p.category === filter);
 
   return (
     <LenisProvider>
@@ -83,17 +83,17 @@ export default function PortfolioPage() {
 
         {/* Hero Section */}
         <section className="relative pt-40 pb-20 px-4 sm:px-6">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-primary/10 blur-[120px] rounded-full opacity-50" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-indigo-500/10 blur-[120px] rounded-full opacity-50" />
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
               <div className="max-w-2xl">
                 <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-3 mb-6">
-                  <span className="w-12 h-[1px] bg-primary" />
-                  <span className="text-primary font-mono text-xs uppercase tracking-[0.3em]">Selected Projects</span>
+                  <span className="w-12 h-[1px] bg-indigo-500" />
+                  <span className="text-indigo-400 font-mono text-xs uppercase tracking-[0.3em]">Simulation Intelligence</span>
                 </motion.div>
                 <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
                   className="text-5xl sm:text-7xl md:text-8xl font-bold font-heading tracking-tighter leading-none mb-6">
-                  Featured <br /> <span className="text-zinc-700">Work.</span>
+                  Impact <br /> <span className="text-zinc-700">Gallery.</span>
                 </motion.h1>
               </div>
               
@@ -124,14 +124,14 @@ export default function PortfolioPage() {
             animate="show"
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {filteredProjects.map((project, i) => (
+            {filteredSimulations.map((project, i) => (
               <motion.div 
                 key={project.title}
                 layout
                 variants={fadeUp}
                 className="group relative"
               >
-                <div className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-zinc-900 border border-white/5 group-hover:border-primary/30 transition-all duration-500">
+                <div className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-zinc-900 border border-white/5 group-hover:border-indigo-500/30 transition-all duration-500">
                   <div className="absolute inset-0 bg-zinc-950/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
                   <Image 
                     src={project.image} 
@@ -153,16 +153,17 @@ export default function PortfolioPage() {
 
                   {/* Icon Badge */}
                   <div className="absolute top-6 right-6 w-12 h-12 rounded-full bg-black/60 backdrop-blur-md border border-white/10 flex items-center justify-center translate-y-[-10px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 z-20">
-                    {project.category === "YouTube" ? <Youtube className="w-5 h-5 text-red-500" /> : 
-                     project.category === "Reels" ? <Instagram className="w-5 h-5 text-pink-500" /> : 
-                     <Video className="w-5 h-5 text-blue-500" />}
+                    {project.category === "National" ? <Globe className="w-5 h-5 text-indigo-400" /> : 
+                     project.category === "State" ? <Target className="w-5 h-5 text-rose-400" /> : 
+                     project.category === "Demographic" ? <Users className="w-5 h-5 text-amber-400" /> :
+                     <Shield className="w-5 h-5 text-emerald-400" />}
                   </div>
                 </div>
 
                 <div className="mt-6 flex justify-between items-start cursor-pointer">
                   <div>
-                    <h3 className="text-xl font-bold font-heading group-hover:text-primary transition-colors duration-300">{project.title}</h3>
-                    <p className="text-zinc-500 text-sm mt-1 font-sans">{project.client} · {project.duration}</p>
+                    <h3 className="text-xl font-bold font-heading group-hover:text-indigo-400 transition-colors duration-300">{project.title}</h3>
+                    <p className="text-zinc-500 text-sm mt-1 font-sans">{project.client} · Accuracy: {project.accuracy}</p>
                   </div>
                   <div className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
                     <ArrowUpRight className="w-5 h-5" />
@@ -174,13 +175,13 @@ export default function PortfolioPage() {
 
           {/* Load More/Stats */}
           <div className="mt-32 p-12 rounded-[3rem] bg-zinc-900/30 border border-white/5 backdrop-blur-sm relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[80px] rounded-full" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 blur-[80px] rounded-full" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 relative z-10 text-center">
               {[
-                { label: "Hours Edited", val: "12,000+" },
-                { label: "Active Clients", val: "450+" },
-                { label: "Retention Rate", val: "94%" },
-                { label: "Views Generated", val: "2.4B+" }
+                { label: "Simulations Run", val: "25,000+" },
+                { label: "Data Nodes", val: "1.2B+" },
+                { label: "Prediction Accuracy", val: "96.4%" },
+                { label: "Campaigns Won", val: "180+" }
               ].map(stat => (
                 <div key={stat.label}>
                   <p className="text-4xl font-bold font-mono tracking-tighter text-white mb-2">{stat.val}</p>

@@ -30,13 +30,13 @@ function ScrollText() {
         }
     }, []);
 
-    const text = "We decode human attention. Our synthesis process captures neurological signals in the first 3 seconds, sustaining engagement via surgical narrative cuts and high-fidelity mastering.";
+    const text = "We simulate democratic outcomes. Our AI models analyze demographic trends across key voter blocks, projecting election results with surgical precision and predictive modeling.";
 
     const features = [
-        { icon: Cpu, label: "Dedicated Neural Editor" },
-        { icon: Zap, label: "Unlimited Iterations" }, 
-        { icon: Database, label: "Tactical Turnaround" },
-        { icon: Terminal, label: "Encrypted Comms" }
+        { icon: Cpu, label: "Advanced AI Modeling" },
+        { icon: Zap, label: "Unlimited Simulations" }, 
+        { icon: Database, label: "Real-time Forecasting" },
+        { icon: Terminal, label: "Scenario Analysis" }
     ];
 
     return (

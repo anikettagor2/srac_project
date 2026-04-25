@@ -1,39 +1,39 @@
 
-# EditHub Implementation Plan & TODOs
+# Electra Simulation Engine Implementation Plan & TODOs
 
 ## 🚀 Current Progress
 - **Infrastructure**: Next.js 15, Tailwind v4, Firebase Configured.
-- **Authentication**: Auth Context, Protected Routes, Login Page (Google/Email UI).
-- **Core Feature**: Video Review Interface (Player, Timestamped Comments, Threads).
-- **Dashboard**: Layout, Sidebar, Overview Page.
+- **Brand Identity**: Fully rebranded from EditoHub to Electra. High-fidelity dark mode UI implemented.
+- **Core Engine**: Gemini 1.5 Pro integration for electoral simulation.
+- **Data Models**: Refactored schema.ts to support Simulations, Iterations, and strategic Data Nodes.
+- **Landing Page**: Futuristic Hero, Impact Gallery (Portfolio), and CTAs fully aligned with Electra.
 
 ## 📝 TODO List for Production
 
-### 1. Database & Backend
-- [ ] **Data Seeding**: Create a script to seed initial Projects and Users in Firestore if using the emulator.
-- [x] **Security Rules**: Implement `firestore.rules` to strictly enforce Role-Based Access Control (RBAC).
-    - Only `admin`/`manager` can create projects.
-    - `clients` can only view assigned projects.
-- [x] **Storage Rules**: Restrict video uploads to authenticated users.
+### 1. Simulation Engine Refinement
+- [ ] **Advanced Prompt Engineering**: Fine-tune the Gemini system prompt for deeper demographic analysis (Rural vs Urban weights).
+- [ ] **Data Integration**: Connect the simulation to real-time public polling APIs or CSV datasets.
+- [ ] **Deterministic Mode**: Implement a "Seed" system to allow repeatable simulations for baseline testing.
 
-### 2. Video Review Polish
-- [x] **Real-time Sync**: Hook up `onSnapshot` in `ReviewPage` to listen for new comments in real-time.
-- [ ] **Canvas Drawing**: Add ability to draw on the video frame using HTML5 Canvas overlay (Frame.io feature).
-- [x] **Optimistic UI**: instantly update UI while waiting for Firestore write.
+### 2. Dashboard & Visualization
+- [x] **Result Dashboard**: Rebranded and integrated Recharts for voter distribution.
+- [ ] **Heatmaps**: Implement an SVG-based map of India/States to show seat-by-seat projections.
+- [ ] **Iteration Comparison**: Allow users to compare two different simulation runs side-by-side.
 
-### 3. File Uploads
-- [x] Implement `upload` page using `firebase/storage`.
-- [x] Add Resumable Uploads for large video files.
-- [ ] integrate a Transcoding service (FFmpeg on Cloud Run or similar) if raw formats are uploaded.
+### 3. User Experience
+- [x] **Simulation Panel**: Multi-step configuration flow (Setup -> Budget -> Strategy).
+- [ ] **Export Reports**: Add PDF generation for the AI Strategic Intelligence Report.
+- [ ] **Collaborative Mode**: Allow strategists to share simulation links with restricted "View Only" access.
 
-### 4. Client & Guest Access
-- [ ] Implement `GuestIdentityModal` properly to capture guest name before allowing them to view/comment if public link is used.
-- [ ] Create simple "Share Link" generator that creates a unique permission token.
+### 4. Backend & Security
+- [x] **Security Rules**: Enforce RBAC for Simulations and Iterations in Firestore.
+- [ ] **Rate Limiting**: Implement strict API rate limiting for Gemini calls per user to control costs.
+- [ ] **Simulation Queue**: If traffic spikes, implement a queueing system for long-running AI inferences.
 
-### 5. Admin Features
-- [ ] Create User Management table.
-- [ ] Implement Audit Logs viewer.
+### 5. Deployment
+- [x] Set up Vercel Environment Variables (GEMINI_API_KEY).
+- [ ] Deploy finalized Firebase Security Rules.
+- [ ] Conduct load testing for high-concurrency simulation runs.
 
-### 6. Deployment
-- [ ] Set up Vercel Envrionment Variables.
-- [ ] Deploy Cloud Functions (`firebase deploy --only functions`).
+---
+© 2026 Electra Simulation Engine.

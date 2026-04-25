@@ -8,7 +8,7 @@ import Link from "next/link";
 import { ArrowRight, Star, Zap, Clock, ThumbsUp } from "lucide-react";
 
 /* ─── helpers ─────────────────────────────────────────────── */
-const WORDS = ["Creators", "Brands", "Podcasters", "Agencies", "YouTubers"];
+const WORDS = ["Strategists", "Analysts", "Campaigns", "Parties", "Voters"];
 
 function SplitText({ text, className }: { text: string; className?: string }) {
   return (
@@ -102,9 +102,9 @@ export function Hero() {
   }, []);
 
   const stats = [
-    { icon: Zap, value: "10K+", label: "Videos Delivered" },
-    { icon: Clock, value: "24hr", label: "Avg. Turnaround" },
-    { icon: ThumbsUp, value: "98%", label: "Client Satisfaction" },
+    { icon: Zap, value: "1M+", label: "Simulations Run" },
+    { icon: Clock, value: "<2s", label: "Real-time Analysis" },
+    { icon: ThumbsUp, value: "99%", label: "Accuracy Rate" },
   ];
 
   return (
@@ -198,7 +198,7 @@ export function Hero() {
               </motion.div>
             ))}
           </div>
-          <span className="text-xs text-zinc-300 font-medium tracking-wide">Trusted by 500+ creators</span>
+          <span className="text-xs text-zinc-300 font-medium tracking-wide">Trusted by 500+ political campaigns</span>
           <motion.div
             animate={{ opacity: [0.4, 1, 0.4] }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -208,9 +208,9 @@ export function Hero() {
 
         {/* Headline – character reveal */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.08] mb-4 tracking-tight perspective-1000">
-          <SplitText text="Professional video" />
+          <SplitText text="Predictive election" />
           <br />
-          <SplitText text="editing for" className="mr-3" />
+          <SplitText text="simulation for" className="mr-3" />
           <CyclingWord />
         </h1>
 
@@ -229,10 +229,10 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-base sm:text-lg text-zinc-400 max-w-2xl mb-10 leading-relaxed"
         >
-          From raw footage to publish-ready content. We handle{" "}
-          <span className="text-zinc-200 font-medium">YouTube videos</span>,{" "}
-          <span className="text-zinc-200 font-medium">Instagram Reels</span>, podcasts, and more — with{" "}
-          <span className="text-primary font-medium">fast turnaround</span> and clear revision cycles.
+          From strategy planning to projected outcomes. We model{" "}
+          <span className="text-zinc-200 font-medium">Voter behavior</span>,{" "}
+          <span className="text-zinc-200 font-medium">Budget impact</span>, sentiment, and more — with{" "}
+          <span className="text-primary font-medium">Gemini 1.5 Pro</span> AI-driven insights.
         </motion.p>
 
         {/* CTAs */}
@@ -243,7 +243,7 @@ export function Hero() {
           className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto mb-16"
         >
           {/* Primary CTA – shimmer effect */}
-          <Link href="/signup" className="w-full sm:w-auto">
+          <Link href="/simulate" className="w-full sm:w-auto">
             <button className="relative group overflow-hidden flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-primary text-white font-semibold rounded-xl transition-all shadow-[0_0_30px_rgba(99,102,241,0.4)] hover:shadow-[0_0_50px_rgba(99,102,241,0.6)] hover:scale-[1.02] active:scale-[0.98]">
               {/* shimmer sweep */}
               <motion.div
@@ -251,7 +251,7 @@ export function Hero() {
                 animate={{ x: ["-120%", "140%"] }}
                 transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1.5, ease: "easeInOut" }}
               />
-              <span className="relative">Start Your Project</span>
+              <span className="relative">Run Simulation</span>
               <motion.div
                 className="relative"
                 animate={{ x: [0, 4, 0] }}
@@ -263,14 +263,14 @@ export function Hero() {
           </Link>
 
           {/* Secondary CTA */}
-          <Link href="/portfolio" className="w-full sm:w-auto">
+          <Link href="/results" className="w-full sm:w-auto">
             <button className="flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 text-white font-semibold rounded-xl hover:bg-white/10 hover:border-white/25 transition-all backdrop-blur-sm">
               <motion.div
                 animate={{ scale: [1, 1.3, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 className="w-2 h-2 rounded-full bg-primary"
               />
-              View Our Work
+              View Dashboard
             </button>
           </Link>
         </motion.div>

@@ -1,7 +1,7 @@
 
 // Firestore Data Models
 
-export type UserRole = 'admin' | 'manager' | 'editor' | 'client' | 'guest' | 'sales_executive' | 'project_manager';
+export type UserRole = 'admin' | 'manager' | 'analyst' | 'client' | 'guest' | 'strategist' | 'project_manager';
 
 export interface User {
     uid: string;
@@ -11,31 +11,31 @@ export interface User {
     role: UserRole;
     createdAt: number; // Timestamp
     phoneNumber?: string; // For guests
-    companyName?: string; // Optional company name for clients
+    companyName?: string; // Optional company name for clients (e.g., Political Party)
     websiteUrl?: string; // Additional profile links for clients
     clientCategory?: 'Retainer' | 'One-time' | 'Premium' | string; // Client category
-    customRates?: Record<string, number>; // Custom video rates for this specific client (legacy - use multiTierRates for multiple prices)
-    multiTierRates?: Record<string, { label?: string; price: number }[]>; // Multiple price tiers per video format (new - replaces customRates when set)
-    allowedFormats?: Record<string, boolean>; // Which video formats are visible
+    customRates?: Record<string, number>; // Custom simulation rates (legacy)
+    multiTierRates?: Record<string, { label?: string; price: number }[]>; // Multiple price tiers per simulation model
+    allowedModels?: Record<string, boolean>; // Which simulation models are visible
     initialPassword?: string; // Temp password for new users
-    createdBy?: string; // UID of sales exec or admin who created this user
-    managedBy?: string; // UID of sales exec managing this client
+    createdBy?: string; // UID of strategist or admin who created this user
+    managedBy?: string; // UID of strategist managing this client
     assignedManagerId?: string; // UID of project manager assigned to this client
-    payLater?: boolean; // New feature: allows client to skip immediate payment
+    payLater?: boolean; // allows client to skip immediate payment
     creditLimit?: number; // Maximum pending dues allowed for Pay Later
     deletionRequested?: boolean; // When user requests account deletion, pending admin approval
     deletionRequestedAt?: number; // Timestamp of deletion request
 
     // Role-specific metrics
-    income?: number; // Total income for editor
-    rating?: number; // Rating for editor
-    portfolio?: { name: string; url: string; date?: number; clientName?: string; category?: string }[]; // Showcase projects for editor
-    onboardingStatus?: 'pending' | 'approved' | 'rejected'; // For editors created by SE/PM
-    totalRevenueGenerated?: number; // For SE/PM
+    income?: number; // Total income for analyst
+    rating?: number; // Rating for analyst
+    portfolio?: { name: string; url: string; date?: number; clientName?: string; category?: string }[]; // Showcase simulations for analyst
+    onboardingStatus?: 'pending' | 'approved' | 'rejected'; // For analysts created by strategist/PM
+    totalRevenueGenerated?: number; // For strategist/PM
     whatsappNumber?: string;
-    managedByPM?: string; // UID of PM managing this editor (for groups)
+    managedByPM?: string; // UID of PM managing this analyst (for groups)
     location?: string;
-    skills?: string[]; // Specialization/Skills for editors
+    skills?: string[]; // Specialization/Skills (e.g., Sentiment Analysis, Demographic Modeling)
     skillPrices?: Record<string, string>; // Price range per skill
     status?: 'active' | 'inactive';
     availabilityStatus?: 'online' | 'offline' | 'sleep'; // Presence status
@@ -57,84 +57,84 @@ export interface User {
         agreement?: { url: string; name: string; uploadedAt: number };
         gst?: { url: string; name: string; uploadedAt: number };
         nda?: { url: string; name: string; uploadedAt: number };
-        invoices?: { id: string; url: string; name: string; uploadedAt: number }[]; // Since multiple invoice downloads maybe
+        invoices?: { id: string; url: string; name: string; uploadedAt: number }[];
     };
 }
 
-export type ProjectStatus = 
-    | 'project_created' 
-    | 'editor_not_assigned' 
-    | 'editor_assigned' 
-    | 'in_production' 
+export type SimulationStatus = 
+    | 'sim_created' 
+    | 'analyst_not_assigned' 
+    | 'analyst_assigned' 
+    | 'processing' 
     | 'review' 
     | 'completed' 
     | 'completed_pending_payment'
-    | 'active' // Keep for compatibility
-    | 'in_review' // Keep for compatibility
-    | 'approved' // Keep for compatibility
-    | 'pending_assignment' // Keep for compatibility
+    | 'active'
+    | 'in_review'
+    | 'approved'
+    | 'pending_assignment'
     | 'archived';
 
 
-export interface Project {
+export interface Simulation {
     id: string;
     name: string;
-    clientId: string; // ID of the client who owns this project
-    clientName: string; // Deprecated in favor of 'brand' maybe?
-    brand?: string;
+    clientId: string; // ID of the client who owns this simulation
+    clientName: string;
+    brand?: string; // e.g., "UP 2027 Campaign"
     description?: string;
     deadline?: string;
     duration?: number;
-    videoType?: string;
-    videoFormat?: string; // e.g., 'Reel Format', 'Documentary', etc.
-    aspectRatio?: '9:16' | '1:1' | '16:9' | string;
+    simulationType?: string; // e.g., 'Exit Poll', 'Predictive Trend', 'Swing Analysis'
+    electionModel?: string; // e.g., 'First-Past-The-Post', 'Proportional'
+    region?: string; // e.g., 'Uttar Pradesh', 'India'
     referenceLink?: string;
     referenceFiles?: { name: string; url: string; size?: number; type?: string; uploadedAt?: number; uploadedBy?: string }[];
     pmFiles?: { name: string; url: string; size?: number; type?: string; uploadedAt?: number; uploadedBy?: string }[];
     budget?: number;
     totalCost?: number; // Calculated cost
-    selectedPricingTier?: number; // Index of selected pricing tier from client's multiTierRates
-    pricingTierLabel?: string; // Label of selected pricing tier (e.g., "Standard", "Premium")
-    pricingTierPrice?: number; // Final price of selected tier
-    amountPaid?: number; // Upfront + Final
+    selectedPricingTier?: number; // Index of selected pricing tier
+    pricingTierLabel?: string; 
+    pricingTierPrice?: number; 
+    amountPaid?: number; 
     paymentStatus?: string; // 'half_paid', 'full_paid'
-    assignedEditorId?: string;
-    footageLink?: string; // Link to cloud storage
-    footageLinks?: string[]; // Multiple cloud storage links
-    rawFiles?: { name: string; url: string; playbackId?: string; size?: number; type?: string; uploadedAt?: number }[]; // Raw video files uploaded by client
-    deliveredFiles?: { name: string; url: string; playbackId?: string; size?: number; type?: string; uploadedAt?: number }[];
-    audioFiles?: { name: string; url: string; playbackId?: string; size?: number; type?: string; uploadedAt?: number }[];
+    assignedAnalystId?: string;
+    dataSourceLink?: string; // Link to cloud storage with datasets
+    dataSourceLinks?: string[]; 
+    inputDatasets?: { name: string; url: string; size?: number; type?: string; uploadedAt?: number }[]; 
+    generatedReports?: { name: string; url: string; size?: number; type?: string; uploadedAt?: number }[];
+    audioTranscripts?: { name: string; url: string; size?: number; type?: string; uploadedAt?: number }[];
     referenceLinks?: string[];
-    thumbnailUrl?: string; // Cover image
-    status: ProjectStatus;
+    thumbnailUrl?: string; // Visual summary image
+    status: SimulationStatus;
     createdAt: number;
     updatedAt: number;
-    members: string[]; // Array of User UIDs (admin, manager, editor, client)
-    currentRevisionId?: string; // ID of the latest active revision
+    members: string[]; // Array of User UIDs (admin, manager, analyst, client)
+    currentIterationId?: string; // ID of the latest active iteration
     ownerId?: string;
-    assignmentStatus?: ProjectAssignmentStatus;
-    downloadUnlockRequested?: boolean; // true when a payLater client requests download unlock from PM
-    downloadsUnlocked?: boolean;       // true when PM has explicitly approved downloads for this project
-    clientHasDownloaded?: boolean;     // true when a client downloads a file successfully
-    downloadUnlockedAt?: number;       // timestamp of when the file was downloaded
-    isPayLaterRequest?: boolean;       // true for projects submitted via the Pay Later workflow
-    assignmentAt?: number;             // When the editor was assigned
-    assignmentExpiresAt?: number;      // When the assignment expires (10 min timer)
+    assignmentStatus?: SimulationAssignmentStatus;
+    downloadUnlockRequested?: boolean; 
+    downloadsUnlocked?: boolean;       
+    clientHasDownloaded?: boolean;     
+    downloadUnlockedAt?: number;       
+    isPayLaterRequest?: boolean;       
+    assignmentAt?: number;             
+    assignmentExpiresAt?: number;      
 
     // Management links
-    assignedPMId?: string;             // Project Manager assigned to this project
-    assignedSEId?: string;             // Sales Executive who brought this client
-    editorPrice?: number;              // Price shared with the editor
-    editorDeclineReason?: string;      // Reason for editor declining project
-    editorRating?: number;             // Client rating for editor (1-5)
-    editorReview?: string;             // Client review for editor
-    pmRemarks?: string;                // Remarks from the Project Manager to the editor
-    autoPay?: boolean;                 // If true, PM has authorized automatic flow for this project
+    assignedPMId?: string;             
+    assignedSEId?: string;             
+    analystPrice?: number;              
+    analystDeclineReason?: string;      
+    analystRating?: number;             
+    analystReview?: string;             
+    pmRemarks?: string;                
+    autoPay?: boolean;                 
     scripts?: { name: string; url: string; size?: number; type?: string; uploadedAt?: number }[];
 
     // Audit Log
-    editorPaid?: boolean;              // Admin marked this editor payment as cleared
-    editorPaidAt?: number;
+    analystPaid?: boolean;              
+    analystPaidAt?: number;
 
     logs?: {
         event: string;
@@ -143,53 +143,52 @@ export interface Project {
         timestamp: number;
         details?: string;
     }[];
-    revisionsCount?: number; // Total revisions handled
-    completedAt?: number; // When the project was marked as completed/approved
+    iterationsCount?: number; // Total iterations handled
+    completedAt?: number; 
 
     // Retention lifecycle
-    downloadRetentionStartedAt?: number; // first successful client download timestamp
-    assetsCleanupAfter?: number; // scheduled assets purge timestamp (first download + 24h)
-    assetsPurgedAt?: number; // when raw/reference/script assets were purged
-    finalDownloadCount?: number; // total download count tracked at project level
-    finalVideoPurged?: boolean; // true after final video cleanup
-    finalVideoPurgedAt?: number; // when final video objects were purged
+    downloadRetentionStartedAt?: number; 
+    assetsCleanupAfter?: number; 
+    assetsPurgedAt?: number; 
+    finalDownloadCount?: number; 
+    finalDataPurged?: boolean; 
+    finalDataPurgedAt?: number; 
 }
 
-export type ProjectAssignmentStatus = 'pending' | 'accepted' | 'rejected' | 'expired';
+export type SimulationAssignmentStatus = 'pending' | 'accepted' | 'rejected' | 'expired';
 
-export type RevisionStatus = 'active' | 'approved' | 'changes_requested' | 'archived';
+export type IterationStatus = 'active' | 'approved' | 'adjustments_requested' | 'archived';
 
-export interface Revision {
+export interface Iteration {
     id: string;
-    projectId: string;
+    simulationId: string;
     version: number; // 1, 2, 3...
-    videoUrl: string; // Storage URL
-    thumbnailUrl?: string; // Specific frame or generated thumb
+    reportUrl: string; // Storage URL
+    visualUrl?: string; // Summary visual
     description?: string;
-    status: RevisionStatus;
+    status: IterationStatus;
     uploadedBy: string; // User UID
     createdAt: number;
-    playbackId?: string; // Mux playback ID
-    downloadCount?: number; // Track downloads by client for limits
-    videoDeletedAt?: number; // Track when revision video object was deleted by lifecycle policy
+    downloadCount?: number; 
+    dataDeletedAt?: number; 
 }
 
 export type CommentStatus = 'open' | 'resolved';
 
 export interface Comment {
     id: string;
-    projectId: string; // Denormalized for queries
-    revisionId: string;
+    simulationId: string; 
+    iterationId: string;
     userId: string;
     userName: string;
     userAvatar?: string | null;
     userRole: UserRole;
     content: string;
-    timestamp: number; // Video timestamp in seconds (float)
-    createdAt: number; // Message timestamp
+    timestamp: number; // Simulation timeline index (float)
+    createdAt: number; 
     status: CommentStatus;
     replies?: CommentReply[];
-    attachments?: string[]; // URLs
+    attachments?: string[]; 
 }
 
 export interface CommentReply {
@@ -204,22 +203,22 @@ export interface CommentReply {
 }
 
 export interface GuestSession {
-    id: string; // Distinct ID, maybe stored in cookie/localStorage
+    id: string; 
     name: string;
     phoneNumber: string;
     email?: string;
-    projectId: string;
+    simulationId: string;
     firstSeenAt: number;
 }
 
 export interface ClientInput {
     id: string;
-    projectId: string;
-    revisionId: string; // Linked to a specific round
+    simulationId: string;
+    iterationId: string; 
     type: 'file' | 'link' | 'voice';
     url: string;
-    name: string; // Filename or link title
-    uploadedBy: string; // User UID
+    name: string; 
+    uploadedBy: string; 
     createdAt: number;
     description?: string;
 }
@@ -227,7 +226,7 @@ export interface ClientInput {
 export interface Notification {
     id: string;
     userId: string;
-    type: 'comment' | 'mention' | 'revision' | 'approval' | 'assigned';
+    type: 'comment' | 'mention' | 'iteration' | 'approval' | 'assigned';
     title: string;
     message: string;
     link: string;
@@ -244,27 +243,27 @@ export interface InvoiceItem {
 
 export interface Invoice {
     id: string;
-    invoiceNumber: string; // e.g. INV-2024-001
-    projectId?: string;
+    invoiceNumber: string; 
+    simulationId?: string;
     clientId: string;
     clientName: string;
     clientEmail: string;
     clientAddress?: string;
     items: InvoiceItem[];
     subtotal: number;
-    tax?: number; // e.g. 18%
+    tax?: number; 
     total: number;
     status: 'draft' | 'sent' | 'paid' | 'overdue' | 'cancelled';
-    issueDate: number; // timestamp
-    dueDate: number; // timestamp
+    issueDate: number; 
+    dueDate: number; 
     notes?: string;
     createdAt: number;
     updatedAt: number;
 }
 
-export interface ProjectMessage {
+export interface SimulationMessage {
     id: string;
-    projectId: string;
+    simulationId: string;
     senderId: string;
     senderName: string;
     senderRole: UserRole;
@@ -274,7 +273,7 @@ export interface ProjectMessage {
 
 export interface UploadSession {
     sessionId: string;
-    projectId: string;
+    simulationId: string;
     fileName: string;
     fileSize: number;
     totalChunks: number;
@@ -286,27 +285,27 @@ export interface UploadSession {
     updatedAt: number;
 }
 
-export type VideoJobStatus =
+export type SimulationJobStatus =
     | 'pending'
-    | 'processing_thumbnail'
-    | 'thumbnail_done'
-    | 'transcoding'
+    | 'processing_summary'
+    | 'summary_done'
+    | 'modeling'
     | 'ready'
     | 'error';
 
-export interface VideoJob {
+export interface SimulationJob {
     id: string;
-    projectId: string;
-    revisionId: string;
+    simulationId: string;
+    iterationId: string;
     sessionId?: string;
-    status: VideoJobStatus;
-    thumbnailUrl?: string;
-    hlsUrl?: string;          // .m3u8 playlist URL
-    playbackId?: string;      // Mux playback ID
-    resolutions?: string[];   // e.g. ['1080p', '720p', '480p']
+    status: SimulationJobStatus;
+    summaryUrl?: string;
+    modelUrl?: string;          
+    playbackId?: string;      
+    models?: string[];   
     durationSeconds?: number;
-    widthPx?: number;
-    heightPx?: number;
+    accuracyScore?: number;
+    confidenceInterval?: number;
     errorMessage?: string;
     createdAt: number;
     updatedAt: number;

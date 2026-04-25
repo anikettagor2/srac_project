@@ -10,28 +10,28 @@ gsap.registerPlugin(ScrollTrigger);
 const steps = [
   {
     number: "01",
-    title: "Strategy & Onboarding",
-    description: "We deep dive into your content style, goals, and target audience to build a custom editing blueprint."
+    title: "Demographic Mapping",
+    description: "We map out key voter segments, identifying regional nuances and swing-potential across all major demographics."
   },
   {
     number: "02",
-    title: "Raw Footage Transfer",
-    description: "Upload your raw files to our high-speed cloud infrastructure. We handle massive files with ease."
+    title: "Data Ingestion",
+    description: "Integrate latest polling data, economic indicators, and historical performance into our secure processing environment."
   },
   {
     number: "03",
-    title: "Elite Production Phase",
-    description: "Our specialist editors craft your content using cinematic techniques and viral psychology."
+    title: "AI Simulation",
+    description: "Our Gemini-powered engine runs millions of scenarios, modeling the complex interplay between budget and voter sentiment."
   },
   {
     number: "04",
-    title: "Review & Refine",
-    description: "Use our frame-accurate feedback tool to request adjustments. We refine until it's perfect."
+    title: "Impact Analysis",
+    description: "Analyze which strategies succeeded and which failed. We provide data-precise feedback on your campaign's viability."
   },
   {
     number: "05",
-    title: "Master Delivery",
-    description: "Receive your high-bitrate masters ready for platform domination."
+    title: "Strategic Deployment",
+    description: "Receive high-fidelity campaign blueprints ready for real-world execution and platform domination."
   }
 ];
 

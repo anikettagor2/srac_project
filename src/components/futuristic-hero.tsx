@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "./ui/button";
-import { Play, ArrowRight, Zap, Shield, Star, MousePointer2 } from "lucide-react";
+import { Play, ArrowRight, Zap, Shield, Star, MousePointer2, Database, TrendingUp, Cpu } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -75,8 +75,8 @@ export function FuturisticHero() {
            className="mb-8"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-primary text-[10px] font-black tracking-[0.3em] uppercase backdrop-blur-md">
-            <Zap className="w-3 h-3 fill-primary" />
-            Next-Gen Video Agency
+            <Cpu className="w-3 h-3 fill-primary" />
+            Predictive Election Simulation
           </span>
         </motion.div>
 
@@ -88,7 +88,7 @@ export function FuturisticHero() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="block"
             >
-              UNLEASH
+              DECODE
             </motion.span>
           </div>
           <br />
@@ -99,7 +99,7 @@ export function FuturisticHero() {
                transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                className="block italic"
              >
-               CREATIVE
+               THE FUTURE
              </motion.span>
           </div>
           <br />
@@ -110,7 +110,7 @@ export function FuturisticHero() {
               transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="block"
             >
-              POWER
+              DEMOCRACY
             </motion.span>
           </div>
         </h1>
@@ -122,7 +122,7 @@ export function FuturisticHero() {
           className="max-w-xl mx-auto mb-12"
         >
           <p className="text-lg md:text-xl text-muted-foreground font-medium leading-relaxed">
-            We don&apos;t just edit videos. We build visual identities for the world&apos;s most ambitious creators and brands.
+            We don&apos;t just predict outcomes. We simulate the pulse of the electorate through high-fidelity AI modeling and strategic data intelligence.
           </p>
         </motion.div>
 
@@ -132,37 +132,37 @@ export function FuturisticHero() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
-            <Link href="/login">
+            <Link href="/simulate">
               <Button size="lg" className="h-16 px-10 rounded-full text-lg font-bold bg-primary hover:bg-primary/90 text-white shadow-[0_0_30px_rgba(99,102,241,0.4)] transition-all scale-110">
-                Launch Project
+                Launch Simulator
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
             <button className="flex items-center gap-3 text-white/70 hover:text-white transition-colors group px-6 py-2">
-                <Play className="w-5 h-5 fill-white/20 group-hover:fill-white transition-all" />
-                <span className="font-bold tracking-widest text-sm">WATCH SHOWREEL</span>
+                <Database className="w-5 h-5 fill-white/20 group-hover:fill-white transition-all" />
+                <span className="font-bold tracking-widest text-sm uppercase">Explore Data Engine</span>
             </button>
         </motion.div>
       </div>
 
-      {/* Video Reveal Layer */}
+      {/* Video Reveal Layer - Now Simulation Reveal */}
       <div 
         ref={videoRevealRef}
         className="absolute top-[80%] left-1/2 -translate-x-1/2 w-[90%] max-w-[1400px] h-[70vh] z-20 opacity-0 scale-90 rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_50px_100px_rgba(0,0,0,0.5)]"
       >
         <div className="absolute inset-0 bg-black/40 z-10" />
         <img 
-          src="/images/production-visual.png" 
-          alt="Production Visual" 
+          src="/images/image1.png" 
+          alt="Simulation Engine Dashboard" 
           className="production-image w-full h-full object-cover grayscale transition-all duration-1000"
         />
         
         {/* Overlay Cards while revealed */}
         <div className="absolute inset-0 z-20 flex items-center justify-center p-6 md:p-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
-                <HeroStats className="stat-card" icon={<Zap />} title="Hyper-Growth" value="50M+" desc="Total organic views generated." />
-                <HeroStats className="stat-card" icon={<Star />} title="Elite Quality" value="Top 1%" desc="Industry leading production value." />
-                <HeroStats className="stat-card" icon={<MousePointer2 />} title="Retention" value="85%" desc="Average viewer retention rate." />
+                <HeroStats className="stat-card" icon={<TrendingUp />} title="Forecast Power" value="1.2B+" desc="Voter sentiments modeled in real-time." />
+                <HeroStats className="stat-card" icon={<Shield />} title="Data Integrity" value="99.8%" desc="Historical correlation accuracy rate." />
+                <HeroStats className="stat-card" icon={<Zap />} title="Latency" value="200ms" desc="Average inference speed per scenario." />
             </div>
         </div>
       </div>
@@ -173,7 +173,7 @@ export function FuturisticHero() {
         transition={{ repeat: Infinity, duration: 2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2"
       >
-        <span className="text-[10px] font-black tracking-[0.2em] text-white/30 truncate">SCROLL TO REVEAL</span>
+        <span className="text-[10px] font-black tracking-[0.2em] text-white/30 truncate">SCROLL TO REVEAL ENGINE</span>
         <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent" />
       </motion.div>
     </section>
